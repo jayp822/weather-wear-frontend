@@ -7,7 +7,7 @@ export default function Header() {
         prepared for what the day&apos;s weather might bring.
       </h1>
       <p className='text-balance text-center text-gray-300 text-lg'>By inputting the following information into the form, you will receive an email with clothing recommendations for the day based on your city and state. The application works globally, not just in the USA!</p>
-      <p className='text-balance text-center text-gray-200 italic' >* Please note that the application is currently hosted on a cloud service provider's free tier, so wait times might be longer.</p>
+      <p className='text-balance text-center text-gray-200 italic' >* Please note that the application is currently hosted on a cloud service provider&apos;s free tier, so wait times might be longer.</p>
     </div>
   );
 }
