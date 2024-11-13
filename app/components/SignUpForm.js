@@ -8,6 +8,13 @@ export default function SignUpForm() {
   const [loading, setLoading] = useState(false); // Loading state to disable button
   const [error, setError] = useState(''); // Error state to show errors if any
 
+  const reset = () => {
+    setLoading(false);
+    setCity('');
+    setEmail('');
+    setState('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Set loading to true when submitting
@@ -16,27 +23,12 @@ export default function SignUpForm() {
     // Create the endpoint URL dynamically from user inputs
     const endpoint = `${process.env.NEXT_PUBLIC_API}/send_weather_email/${city}/${state}/${email}`;
 
-    // Initialize the AbortController
-    const controller = new AbortController();
-
-    try {
-      // Make the request to the backend server
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        signal: controller.signal, // Attach the controller's signal to the fetch request
-      });
-
-      alert('Email sent successfully!');
-      // Reset the form fields after success
-      setCity('');
-      setState('');
-      setEmail('');
-    } catch (err) {
-      // Handle fetch errors or timeouts
-      setError(err.message);
-    } finally {
-      setLoading(false); // Stop loading when the request is done
-    }
+    // Make the request to the backend server
+    const response = await fetch(endpoint, {
+      method: 'POST',
+    })
+      .then(alert('Message sent'))
+      .finally(reset);
   };
 
   return (
