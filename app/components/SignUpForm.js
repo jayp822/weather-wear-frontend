@@ -24,7 +24,7 @@ export default function SignUpForm() {
     // Create the endpoint URL dynamically from user inputs
     // const endpoint = `${process.env.NEXT_PUBLIC_API}/send_weather_email/${city}/${state}/${email}`;
 
-    const endpoint = `${process.env.NEXT_PUBLIC_API}/${city}/${state}/${email}`;
+    const endpoint = `${process.env.NEXT_PUBLIC_API}/send_weather_email/${city}/${state}/${email}`;
 
     // Make the request to the backend server
 
