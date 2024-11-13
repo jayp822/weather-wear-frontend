@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function SignUpForm() {
   const [city, setCity] = useState('');
@@ -36,53 +36,53 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto w-[85%] bg-white p-6 rounded-lg shadow-md ">
+    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mb-[100px]">
       <h2 className="text-2xl text-center font-bold mb-4">
         Sign Up for Weather Updates
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
+      <form onSubmit={handleSubmit} className="space-y-4 flex flex-col items-center justify-center">
+        <div className='w-full'>
+          <label className="block font-semibold text-xl">
             City
           </label>
           <input
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
+            className="mt-1 p-2 w-full border-[2px] border-black rounded-md"
             required
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
+        <div className='w-full'>
+          <label className="block font-semibold text-xl">
             State
           </label>
           <input
             type="text"
             value={state}
             onChange={(e) => setState(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
+            className="mt-1 p-2 w-full border-[2px] border-black rounded-md"
             required
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
+        <div className='w-full'>
+          <label className="block font-semibold text-xl">
             Email
           </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
+            className="mt-1 p-2 w-full border-[2px] border-black rounded-md"
             required
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded-md"
+          className="w-full bg-blue-500 sm:hover:bg-blue-800 transition duration-200 ease-in-out text-white p-2 rounded-full"
           disabled={loading} // Disable button while loading
         >
-          {loading ? 'Sending...' : 'Sign Up'}
+          {loading ? 'Sending...' : 'Get Recommendation'}
         </button>
       </form>
     </div>
