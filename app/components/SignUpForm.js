@@ -48,8 +48,8 @@ export default function SignUpForm() {
 
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mb-[100]">
-      <h2 className="text-2xl text-center font-bold mb-4">
-        Sign Up for Weather Updates
+      <h2 className="text-balance text-2xl text-center font-bold mb-4">
+        See what you should wear today for the weather
       </h2>
       <form
         onSubmit={handleSubmit}

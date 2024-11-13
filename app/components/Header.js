@@ -6,13 +6,12 @@ export default function Header() {
         <span className="text-blue-400 underline decoration-wavy decoration-[2px] text-nowrap ">
           Weather Wear
         </span>{' '}
-        with just one click you can always be prepared for what the day&apos;s
+        with just one click you can always be prepared for what today&apos;s
         weather might bring.
       </h1>
       <p className="text-balance text-center text-gray-300 text-lg">
-        By inputting the following information into the form, you will receive
-        an email with clothing recommendations for the day based on your city
-        and state. The application works globally, not just in the USA!
+        By inputting the following information, you will receive
+        an email with clothing recommendation for today&apos;s weather in your city. The application works globally, not just in the USA!
       </p>
       <p className="text-balance text-center text-gray-200 italic">
         * Please note that the application is currently hosted on a cloud
