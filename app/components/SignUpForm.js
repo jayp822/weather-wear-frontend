@@ -13,6 +13,7 @@ export default function SignUpForm() {
     setCity('');
     setEmail('');
     setState('');
+    alert('Request Send Successfully and Email Sent');
   };
 
   const handleSubmit = async (e) => {
@@ -21,14 +22,28 @@ export default function SignUpForm() {
     setError(''); // Clear previous errors
 
     // Create the endpoint URL dynamically from user inputs
-    const endpoint = `${process.env.NEXT_PUBLIC_API}/send_weather_email/${city}/${state}/${email}`;
+    // const endpoint = `${process.env.NEXT_PUBLIC_API}/send_weather_email/${city}/${state}/${email}`;
+
+    const endpoint = `${process.env.NEXT_PUBLIC_API}/${city}/${state}/${email}`;
 
     // Make the request to the backend server
-    const response = await fetch(endpoint, {
-      method: 'POST',
-    })
-      .then(alert('Message sent'))
-      .finally(reset);
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+      });
+
+      if (response.status == 200) {
+        reset();
+      } else {
+        setError('Failed to send email. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      setError('An error occurred. Please try again later.'); // Handle errors (e.g., network issues)
+    } finally {
+      console.log('Request finished');
+    }
   };
 
   return (
@@ -76,7 +91,7 @@ export default function SignUpForm() {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 sm:hover:bg-blue-800 transition duration-200 ease-in-out text-white p-2 rounded-full"
+          className={`w-full bg-blue-500 sm:hover:bg-blue-800 transition duration-200 ease-in-out text-white p-2 rounded-full ${loading ? 'bg-blue-900' : 'sm:hover:bg-blue-900 transition duration-200 ease-in-out'}`}
           disabled={loading} // Disable button while loading
         >
           {loading ? 'Sending...' : 'Get Recommendation'}{' '}
