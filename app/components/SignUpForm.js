@@ -13,7 +13,7 @@ export default function SignUpForm() {
     setCity('');
     setEmail('');
     setState('');
-    alert('Request Send Successfully and Email Sent');
+    alert('Request Sent Successfully');
   };
 
   const handleSubmit = async (e) => {
@@ -47,7 +47,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mb-[100]">
+    <div className="max-w-[90%] mx-auto bg-white p-6 rounded-lg shadow-md mb-[100px]">
       <h2 className="text-balance text-2xl text-center font-bold mb-4">
         See what you should wear today for the weather
       </h2>
@@ -58,16 +58,18 @@ export default function SignUpForm() {
         <div className="w-full">
           <label className="block font-semibold text-xl">City</label>
           <input
+            placeholder="your city"
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="mt-1 p-2 w-full border-[2px] border-black rounded-md"
+            className=" mt-1 p-2 w-full border-[2px] border-black rounded-md"
             required
           />
         </div>
         <div className="w-full">
           <label className="block font-semibold text-xl">State</label>
           <input
+            placeholder="your state"
             type="text"
             value={state}
             onChange={(e) => setState(e.target.value)}
@@ -78,6 +80,7 @@ export default function SignUpForm() {
         <div className="w-full">
           <label className="block font-semibold text-xl">Email</label>
           <input
+            placeholder="your email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -91,7 +94,7 @@ export default function SignUpForm() {
 
         <button
           type="submit"
-          className={`w-full bg-blue-500 sm:hover:bg-blue-800 transition duration-200 ease-in-out text-white p-2 rounded-full ${loading ? 'bg-blue-900' : 'sm:hover:bg-blue-900 transition duration-200 ease-in-out'}`}
+          className={`max-w-[80%] text-nowrap bg-blue-500 sm:hover:bg-blue-800 transition duration-200 ease-in-out text-white py-4 px-8 rounded-full ${loading ? 'bg-blue-900' : 'sm:hover:bg-blue-900 transition duration-200 ease-in-out'}`}
           disabled={loading} // Disable button while loading
         >
           {loading ? 'Sending...' : 'Get Recommendation'}{' '}

@@ -10,8 +10,9 @@ export default function Header() {
         weather might bring.
       </h1>
       <p className="text-balance text-center text-gray-300 text-lg">
-        By inputting the following information, you will receive
-        an email with clothing recommendation for today&apos;s weather in your city. The application works globally, not just in the USA!
+        By inputting the following information, you will receive an email with
+        clothing recommendation for today&apos;s weather in your city. The
+        application works globally, not just in the USA!
       </p>
       <p className="text-balance text-center text-gray-200 italic">
         * Please note that the application is currently hosted on a cloud
